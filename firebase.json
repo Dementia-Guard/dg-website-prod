@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "dementia-guard",
     "public": "dist",
     "ignore": [
       "firebase.json",

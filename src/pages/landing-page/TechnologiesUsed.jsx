@@ -11,15 +11,15 @@ const logoStyle = {
 
 export default function TechnologiesUsed() {
   const logos = [
-    './public/images/tech-logos/python.png',
-    './public/images/tech-logos/react_logo.png',
-    './public/images/tech-logos/node.png',
-    './public/images/tech-logos/tensorflow-logo.png',
-    './public/images/tech-logos/lockup.svg',
-    './public/images/tech-logos/colab.png',
-    './public/images/tech-logos/mongodb.png',
-    './public/images/tech-logos/doker.png',
-    './public/images/tech-logos/maps.png',
+    './src/assets/tech-logos/python.png',
+    './src/assets/tech-logos/react_logo.png',
+    './src/assets/tech-logos/node.png',
+    './src/assets/tech-logos/tensorflow-logo.png',
+    './src/assets/tech-logos/lockup.svg',
+    './src/assets/tech-logos/colab.png',
+    './src/assets/tech-logos/mongodb.png',
+    './src/assets/tech-logos/doker.png',
+    './src/assets/tech-logos/maps.png',
   ];
 
   return (
