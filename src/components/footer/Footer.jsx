@@ -11,17 +11,18 @@ import Typography from '@mui/material/Typography';
 import FacebookIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/X';
+import { Divider } from '@mui/material';
 
 const logoStyle = {
-  width: '40px',
-  height: 'auto',
+  width: 'auto',
+  height: '40px',
 };
 
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" mt={1}>
-      {'Copyright © '}
-      <Link href="/">LearnVerse&nbsp;</Link>
+      {'Copyright ©'}
+      <Link href="/">DementiaGuard&nbsp;</Link>
       {new Date().getFullYear()}
     </Typography>
   );
@@ -30,7 +31,7 @@ function Copyright() {
 export default function Footer() {
   return (
     <Box sx={{bgcolor: 'background.default',}}>
-      <Container
+      <Box
         sx={{
           display: 'flex',
           flexDirection: 'column',
@@ -38,7 +39,7 @@ export default function Footer() {
           gap: { xs: 4, sm: 8 },
           py: { xs: 8, sm: 10 },
           textAlign: { sm: 'center', md: 'left' },
-          
+          px: 7
         }}
       >
         <Box
@@ -49,6 +50,7 @@ export default function Footer() {
             justifyContent: 'space-between',
           }}
         >
+          <Divider/>
           <Box
             sx={{
               display: 'flex',
@@ -58,40 +60,15 @@ export default function Footer() {
             }}
           >
             <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
-              <Box sx={{ ml: '', display: 'flex', alignItems: 'center', gap: 1 }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, ml: -10 }}>
                 <img
                   src={
-                    'images/logo.png'
+                    'assets/logo/logo.png'
                   }
                   style={logoStyle}
                   alt="logo of sitemark"
                 />
-                <Typography color='primary' variant='h2' sx={{fontSize:30}}>LearnVerse</Typography>
               </Box>
-              <Typography variant="body2" fontWeight={600} gutterBottom>
-                Newsletter
-              </Typography>
-              <Typography variant="body2" color="text.secondary" mb={2}>
-                Subscribe to our newsletter for weekly updates and promotions.
-              </Typography>
-              <Stack direction="row" spacing={1} useFlexGap>
-                <TextField
-                  id="outlined-basic"
-                  hiddenLabel
-                  size="small"
-                  variant="outlined"
-                  fullWidth
-                  aria-label="Enter your email address"
-                  placeholder="Your email address"
-                  inputProps={{
-                    autoComplete: 'off',
-                    'aria-label': 'Enter your email address',
-                  }}
-                />
-                <Button variant="contained" color="primary" sx={{ flexShrink: 0 }}>
-                  Subscribe
-                </Button>
-              </Stack>
             </Box>
           </Box>
           <Box
@@ -102,22 +79,28 @@ export default function Footer() {
             }}
           >
             <Typography variant="body2" fontWeight={600}>
-              Product
+              Project Scope
             </Typography>
             <Link color="text.secondary" href="#">
-              Features
+              Literature Survey
             </Link>
             <Link color="text.secondary" href="#">
-              Testimonials
+              Research Gap
             </Link>
             <Link color="text.secondary" href="#">
-              Highlights
+              Research Problem
             </Link>
             <Link color="text.secondary" href="#">
-              Pricing
+              Solutions
             </Link>
             <Link color="text.secondary" href="#">
-              FAQs
+              Objectives
+            </Link>
+            <Link color="text.secondary" href="#">
+              Methodology
+            </Link>
+            <Link color="text.secondary" href="#">
+              Technologies
             </Link>
           </Box>
           <Box
@@ -128,16 +111,13 @@ export default function Footer() {
             }}
           >
             <Typography variant="body2" fontWeight={600}>
-              Company
+              Downloads
             </Typography>
             <Link color="text.secondary" href="#">
-              About us
+              Documents
             </Link>
             <Link color="text.secondary" href="#">
-              Careers
-            </Link>
-            <Link color="text.secondary" href="#">
-              Press
+              Presentations
             </Link>
           </Box>
           <Box
@@ -148,16 +128,13 @@ export default function Footer() {
             }}
           >
             <Typography variant="body2" fontWeight={600}>
-              Legal
+              Our Team
             </Typography>
             <Link color="text.secondary" href="#">
-              Terms
+              About Us
             </Link>
             <Link color="text.secondary" href="#">
-              Privacy
-            </Link>
-            <Link color="text.secondary" href="#">
-              Contact
+              Contact Us
             </Link>
           </Box>
         </Box>
@@ -172,15 +149,6 @@ export default function Footer() {
           }}
         >
           <div>
-            <Link color="text.secondary" href="#">
-              Privacy Policy
-            </Link>
-            <Typography display="inline" sx={{ mx: 0.5, opacity: 0.5 }}>
-              &nbsp;•&nbsp;
-            </Typography>
-            <Link color="text.secondary" href="#">
-              Terms of Service
-            </Link>
             <Copyright />
           </div>
           <Stack
@@ -218,7 +186,7 @@ export default function Footer() {
             </IconButton>
           </Stack>
         </Box>
-      </Container>
+      </Box>
     </Box>
   );
 }

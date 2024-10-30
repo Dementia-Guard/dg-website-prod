@@ -7,6 +7,7 @@ import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
+import LaunchIcon from '@mui/icons-material/Launch';
 
 export default function Hero() {
   return (
@@ -16,8 +17,8 @@ export default function Hero() {
         width: '100%',
         backgroundImage:
           theme.palette.mode === 'light'
-            ? 'linear-gradient(180deg, #CEE5FD, #FFF)'
-            : `linear-gradient(#02294F, ${alpha('#090E10', 0.0)})`,
+            ? `linear-gradient(180deg, ${alpha('#0aad0a', 0.15)}, #FFF)`
+            : `linear-gradient(${alpha('#0aad0a', 0.15)}, ${alpha('#033e03', 0.0)})`,
         backgroundSize: '100% 20%',
         backgroundRepeat: 'no-repeat',
         height: '100vh',
@@ -35,7 +36,7 @@ export default function Hero() {
           height: '100%',
           position: 'fixed',
           zIndex: -1,
-          width: '70%',
+          width: '90%',
         }}
       >
         <Stack spacing={2} useFlexGap sx={{ width: { xs: '100%', sm: '100%' } }}>
@@ -48,7 +49,7 @@ export default function Hero() {
               textAlign: '',
             }}
           >
-            Empower Your Mind with&nbsp;
+            Empowering Dementia Care with&nbsp;
             <Typography
               component="span"
               variant="h2"
@@ -57,7 +58,7 @@ export default function Hero() {
                   theme.palette.mode === 'light' ? 'primary.main' : 'primary.light',
               }}
             >
-              Knowledge
+              Innovation
             </Typography>
           </Typography>
           <Typography
@@ -65,13 +66,7 @@ export default function Hero() {
             color="text.secondary"
             sx={{ alignSelf: '', width: { sm: '100%', md: '80%' } }}
           >
-            Welcome to LearnVerse, your gateway to a world of learning opportunities!
-            Whether you're a student, a professional, or simply curious,
-            our course learning app is designed to elevate your skills and expand your horizons.
-            Dive into a vast array of courses covering topics ranging from technology and business to arts and humanities.
-            With expert instructors, interactive lessons, and flexible learning options,
-            LearnVerse makes acquiring new knowledge enjoyable and convenient.
-            Start your learning journey today and unlock your potential with LearnVerse!
+            Welcome to DementiaGuard, your trusted companion in dementia care and support. Designed to enhance the quality of life for dementia patients and their caregivers, our app offers cutting-edge tools and compassionate assistance. From early dementia prediction using MRI brain imaging and a voice-activated therapy assistant to cognitive exercises and geo-fencing for added safety, DementiaGuard combines science and technology to deliver a personalized care experience. Start your journey with DementiaGuard and discover a world where advanced care meets compassionate support.
           </Typography>
           <Stack
             direction={{ xs: 'column', sm: 'row' }}
@@ -80,29 +75,13 @@ export default function Hero() {
             useFlexGap
             sx={{ pt: 2, width: { xs: '100%', sm: 'auto' } }}
           >
-            <TextField
-              id="outlined-basic"
-              hiddenLabel
-              size="small"
-              variant="outlined"
-              aria-label="Enter your email address"
-              placeholder="Your email address"
-              inputProps={{
-                autoComplete: 'off',
-                'aria-label': 'Enter your email address',
-              }}
-            />
             <Button variant="contained" color="primary">
-              Start now
+              Learn More
+            </Button>
+            <Button variant="contained" color="primary">
+              Explore Project &nbsp;<LaunchIcon />
             </Button>
           </Stack>
-          <Typography variant="caption" textAlign="" sx={{ opacity: 0.8 }}>
-            By clicking &quot;Start now&quot; you agree to our&nbsp;
-            <Link href="#" color="primary">
-              Terms & Conditions
-            </Link>
-            .
-          </Typography>
         </Stack>
         {/*<Box
           id="image"
@@ -130,9 +109,9 @@ export default function Hero() {
         />*/}
         
       </Box>
-      <Box sx={{ height: '85vh', position: 'fixed', bottom: 0, right: 0, zIndex: -1 }}>
+      <Box sx={{ height: '80vh', position: 'fixed', bottom: 0, right: 60, zIndex: -1, display: {sm:'none', md: 'block'} }}>
         <img
-          src="images/uni-std.png"
+          src="assets/animated/dementia-patient.png"
           alt="hero-light"
           height="100%"
         />

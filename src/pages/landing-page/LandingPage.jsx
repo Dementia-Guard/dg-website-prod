@@ -10,13 +10,11 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import AutoAwesomeRoundedIcon from '@mui/icons-material/AutoAwesomeRounded';
 import Hero from './Hero';
 import TechnologiesUsed from './TechnologiesUsed';
-import Highlights from './Highlights';
-import Pricing from './Pricing';
-import Features from './Features';
-import Testimonials from './Testimonials';
-import FAQ from './FAQ';
-import Instructor from './Instructor';
 import Documents from './Documents';
+import Presentations from './Presentations';
+import Milestone from './Milestone';
+import OurTeam from './OurTeam';
+import ContactUs from './ContactUs';
 
 export default function LandingPage() {
 
@@ -29,13 +27,12 @@ export default function LandingPage() {
       <Box sx={{ bgcolor: 'background.default' }}>
         <Divider />
         <TechnologiesUsed />
-        <Documents/>
-        <Features />
-        <Testimonials />
-        <Highlights />
-        {/*<Pricing />*/}
-        <FAQ />
-        <Instructor/>
+        <Milestone/>
+        <Documents />
+        <Presentations />
+        <OurTeam />
+        <ContactUs />
+        <Divider/>
       </Box>
     </div>
   );

@@ -12,10 +12,11 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import ToggleColorMode from '../../features/toggle-mode/ToggleColorMode';
+import { alpha } from '@mui/material';
 
 const logoStyle = {
-  width: '30px',
-  height: 'auto',
+  width: 'auto',
+  height: '40px',
   cursor: 'pointer',
 };
 
@@ -68,8 +69,9 @@ function AppAppBar({ mode, toggleColorMode }) {
               borderColor: 'divider',
               boxShadow:
                 theme.palette.mode === 'light'
-                  ? `0 0 1px rgba(85, 166, 246, 0.1), 1px 1.5px 2px -1px rgba(85, 166, 246, 0.15), 4px 4px 12px -2.5px rgba(85, 166, 246, 0.15)`
-                  : '0 0 1px rgba(2, 31, 59, 0.7), 1px 1.5px 2px -1px rgba(2, 31, 59, 0.65), 4px 4px 12px -2.5px rgba(2, 31, 59, 0.65)',
+                  ? `0 0 1px ${alpha('#0aad0a', 0.1)}, 1px 1.5px 2px -1px ${alpha('#0aad0a', 0.15)}, 4px 4px 12px -2.5px ${alpha('#0aad0a', 0.15)}`
+                  : `0 0 1px ${alpha('#033e03', 0.7)}, 1px 1.5px 2px -1px ${alpha('#033e03', 0.65)}, 4px 4px 12px -2.5px ${alpha('#033e03', 0.65)}`,
+
             })}
           >
             <Box
@@ -83,12 +85,11 @@ function AppAppBar({ mode, toggleColorMode }) {
             >
               <img
                 src={
-                  'images/logo.png'
+                  'assets/logo/logo.png'
                 }
                 style={logoStyle}
                 alt="logo of sitemark"
               />
-              <Typography variant='h4' color='primary.main' sx={{}}>LearnVerse</Typography>
             </Box>
             
             <Box
@@ -145,14 +146,6 @@ function AppAppBar({ mode, toggleColorMode }) {
                   sx={{ py: '6px', px: '12px' }}
                 >
                   <Typography variant="body2" color="text.primary">
-                    Achievements
-                  </Typography>
-                </MenuItem>
-                <MenuItem
-                  onClick={() => scrollToSection('faq')}
-                  sx={{ py: '6px', px: '12px' }}
-                >
-                  <Typography variant="body2" color="text.primary">
                     Contact Us
                   </Typography>
                 </MenuItem>
@@ -201,9 +194,6 @@ function AppAppBar({ mode, toggleColorMode }) {
                   </MenuItem>
                   <MenuItem onClick={() => scrollToSection('faq')}>
                     About Us
-                  </MenuItem>
-                  <MenuItem onClick={() => scrollToSection('faq')}>
-                    Achievements
                   </MenuItem>
                   <MenuItem onClick={() => scrollToSection('faq')}>
                     Contact Us

@@ -12,7 +12,7 @@ const logoStyle = {
 export default function TechnologiesUsed() {
   const logos = [
     './assets/tech-logos/python.png',
-    './assets/tech-logos/react_logo.png',
+    './assets/tech-logos/react.png',
     './assets/tech-logos/node.png',
     './assets/tech-logos/tensorflow-logo.png',
     './assets/tech-logos/lockup.svg',

@@ -9,9 +9,9 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { Button, Divider } from '@mui/material';
 
-const docs = [
+const presentations = [
   {
-    topic: 'Topic Assesment',
+    topic: 'Project Proposal',
     subTopic: 'DementiaGuard',
     submittedOn: '2024/07/01',
     avatar: [
@@ -23,35 +23,7 @@ const docs = [
     name: 'Group Work',
   },
   {
-    topic: 'Project Proposal',
-    subTopic: 'Voice Enabled Theraphy Assistant',
-    submittedOn: '2024/07/01',
-    avatar: [<Avatar alt="Travis Howard" src="./assets/team-avatar/vidusha.jpeg" />],
-    name: 'Jayaweera J. A. V. T.',
-  },
-  {
-    topic: 'Project Proposal',
-    subTopic: 'Dementia Prediction',
-    submittedOn: '2024/07/01',
-    avatar: [<Avatar alt="Travis Howard" src="./assets/team-avatar/hasindu.jpeg" />],
-    name: 'Ranasinghe R. A. H. B.',
-  },
-  {
-    topic: 'Project Proposal',
-    subTopic: 'Cognitive Helth Improving Activities',
-    submittedOn: '2024/07/01',
-    avatar: [<Avatar alt="Travis Howard" src="./assets/team-avatar/sanjana.jpeg" />],
-    name: 'Perera K. A. S. N.',
-  },
-  {
-    topic: 'Project Proposal',
-    subTopic: 'Geolocation Fencing',
-    submittedOn: '2024/07/01',
-    avatar: [<Avatar alt="Travis Howard" src="./assets/team-avatar/shabeer.jpeg" />],
-    name: 'Shabeer M. S. M.',
-  },
-  {
-    topic: 'Research Paper',
+    topic: 'Progress Presentation I',
     subTopic: '',
     submittedOn: '',
     avatar: [
@@ -63,7 +35,7 @@ const docs = [
     name: 'Group Work',
   },
   {
-    topic: 'Final Report',
+    topic: 'Progress Presentation II',
     subTopic: '',
     submittedOn: '',
     avatar: [
@@ -75,35 +47,7 @@ const docs = [
     name: 'Group Work',
   },
   {
-    topic: 'Final Report',
-    subTopic: 'Voice Enabled Theraphy Assistant',
-    submittedOn: '',
-    avatar: [<Avatar alt="Travis Howard" src="./assets/team-avatar/vidusha.jpeg" />],
-    name: 'Jayaweera J. A. V. T.',
-  },
-  {
-    topic: 'Final Report',
-    subTopic: 'Dementia Prediction',
-    submittedOn: '',
-    avatar: [<Avatar alt="Travis Howard" src="./assets/team-avatar/hasindu.jpeg" />],
-    name: 'Ranasinghe R. A. H. B.',
-  },
-  {
-    topic: 'Final Report',
-    subTopic: 'Cognitive Helth Improving Activities',
-    submittedOn: '',
-    avatar: [<Avatar alt="Travis Howard" src="./assets/team-avatar/sanjana.jpeg" />],
-    name: 'Perera K. A. S. N.',
-  },
-  {
-    topic: 'Final Report',
-    subTopic: 'Geolocation Fencing',
-    submittedOn: '',
-    avatar: [<Avatar alt="Travis Howard" src="./assets/team-avatar/shabeer.jpeg" />],
-    name: 'Shabeer M. S. M.',
-  },
-  {
-    topic: 'Promotion Poster',
+    topic: 'Final Presentation',
     subTopic: '',
     submittedOn: '',
     avatar: [
@@ -116,7 +60,7 @@ const docs = [
   },
 ];
 
-export default function Documents() {
+export default function Presentations() {
 
   return (
     <Container
@@ -144,12 +88,12 @@ export default function Documents() {
             fontWeight: 500,
           }}
         >
-          Documents
+          Presentations
         </Typography>
       </Box>
       <Grid container spacing={2}>
-        {docs.map((doc, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index} sx={{ display: 'flex' }}>
+        {presentations.map((presentation, index) => (
+          <Grid item xs={12} sm={6} md={3} key={index} sx={{ display: 'flex' }}>
             <Card
               sx={{
                 display: 'flex',
@@ -161,13 +105,10 @@ export default function Documents() {
             >
               <CardContent>
                 <Typography variant="h4" color="text.secondary">
-                  {doc.topic? doc.topic : "No Title"}
-                </Typography>
-                <Typography variant="h6" color="text.secondary">
-                  {doc.subTopic? `${doc.subTopic}`: "DementiaGuard"}
+                  {presentation.topic? presentation.topic : "No Title"}
                 </Typography>
                 <Typography variant="body1" color="text.secondary">
-                  {doc.submittedOn? `Submitted On ${doc.submittedOn}`: "Awaiting Submission"}
+                  {presentation.submittedOn? `Submitted On ${presentation.submittedOn}`: "Awaiting Submission"}
                 </Typography>
               </CardContent>
               <Divider/>
@@ -183,12 +124,12 @@ export default function Documents() {
                 <CardHeader
                   avatar={
                     <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                      {doc.avatar.map((avatarComponent, index) => (
+                      {presentation.avatar.map((avatarComponent, index) => (
                         <Box
                           key={index}
                           sx={{
                             position: 'relative',
-                            zIndex: doc.avatar.length - index, // Ensure first avatar is on top
+                            zIndex: presentation.avatar.length - index, // Ensure first avatar is on top
                             marginLeft: index === 0 ? 0 : '-12px', // Adjust overlap
                           }}
                         >
@@ -197,8 +138,7 @@ export default function Documents() {
                       ))}
                     </Box>
                   }
-                  title={doc.name}
-                  subheader={doc.occupation}
+                  subheader={presentation.occupation}
                 />
                 <Button>Download</Button>
               </Box>
