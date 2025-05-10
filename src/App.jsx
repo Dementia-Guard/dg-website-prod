@@ -10,6 +10,7 @@ import LandingPage from './pages/landing-page/LandingPage';
 import '@fontsource/roboto';
 import AppAppBar from './components/appbar/AppAppBar';
 import Footer from './components/footer/Footer';
+import Chatbot from './components/chatbot/Chatbot';
 
 const App = () => {
   const [themeMode, setThemeMode] = React.useState('light')
@@ -83,6 +84,7 @@ const App = () => {
       <footer>
         <Footer/>
       </footer>
+      <Chatbot themeMode={themeMode} />
     </ThemeProvider>
   );
 }

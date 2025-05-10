@@ -15,6 +15,9 @@ import Presentations from './Presentations';
 import Milestone from './Milestone';
 import OurTeam from './OurTeam';
 import ContactUs from './ContactUs';
+import HeroWithCover from './HeroWithCover';
+import Methodology from './Methodology';
+import ResearchGap from './ResearchGap';
 
 export default function LandingPage() {
 
@@ -23,9 +26,12 @@ export default function LandingPage() {
   return (
     <div>
       <CssBaseline />
-      <Hero />
+      {/*<Hero />*/}
+      <HeroWithCover />
       <Box sx={{ bgcolor: 'background.default' }}>
-        <Divider />
+        {/*<Divider />*/}
+        <ResearchGap />
+        <Methodology />
         <TechnologiesUsed />
         <Milestone/>
         <Documents />

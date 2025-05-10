@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import Box from '@mui/material/Box';
@@ -21,7 +22,21 @@ const logoStyle = {
 };
 
 function AppAppBar({ mode, toggleColorMode }) {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
+  const [isHeroSection, setIsHeroSection] = useState(true);
+
+  // Track scroll position to toggle hero section styling
+  useEffect(() => {
+    const handleScroll = () => {
+      // Consider hero section as top ~50px to allow small buffer
+      setIsHeroSection(window.scrollY <= 220);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
@@ -59,19 +74,21 @@ function AppAppBar({ mode, toggleColorMode }) {
               alignItems: 'center',
               justifyContent: 'space-between',
               flexShrink: 0,
-              bgcolor:
-                theme.palette.mode === 'light'
-                  ? 'rgba(255, 255, 255, 0.4)'
-                  : 'rgba(0, 0, 0, 0.4)',
-              backdropFilter: 'blur(24px)',
+              bgcolor: isHeroSection
+                ? 'transparent'
+                : theme.palette.mode === 'light'
+                ? 'rgba(255, 255, 255, 0.4)'
+                : 'rgba(0, 0, 0, 0.4)',
+              backdropFilter: isHeroSection ? 'none' : 'blur(24px)',
               maxHeight: 40,
-              border: '1px solid',
+              border: isHeroSection ? 'none' : '1px solid',
+              borderBottom: 'none',
               borderColor: 'divider',
-              boxShadow:
-                theme.palette.mode === 'light'
-                  ? `0 0 1px ${alpha('#0aad0a', 0.1)}, 1px 1.5px 2px -1px ${alpha('#0aad0a', 0.15)}, 4px 4px 12px -2.5px ${alpha('#0aad0a', 0.15)}`
-                  : `0 0 1px ${alpha('#033e03', 0.7)}, 1px 1.5px 2px -1px ${alpha('#033e03', 0.65)}, 4px 4px 12px -2.5px ${alpha('#033e03', 0.65)}`,
-
+              boxShadow: isHeroSection
+                ? 'none'
+                : theme.palette.mode === 'light'
+                ? `0 0 1px ${alpha('#0aad0a', 0.1)}, 1px 1.5px 2px -1px ${alpha('#0aad0a', 0.15)}, 4px 4px 12px -2.5px ${alpha('#0aad0a', 0.15)}`
+                : `0 0 1px ${alpha('#033e03', 0.7)}, 1px 1.5px 2px -1px ${alpha('#033e03', 0.65)}, 4px 4px 12px -2.5px ${alpha('#033e03', 0.65)}`,
             })}
           >
             <Box
@@ -80,18 +97,15 @@ function AppAppBar({ mode, toggleColorMode }) {
                 display: 'flex',
                 alignItems: 'center',
                 px: 0,
-                gap: 1
+                gap: 1,
               }}
             >
               <img
-                src={
-                  'assets/logo/logo.png'
-                }
+                src={'assets/logo/logo.png'}
                 style={logoStyle}
                 alt="logo of sitemark"
               />
             </Box>
-            
             <Box
               sx={{
                 display: { xs: 'none', md: 'flex' },

@@ -1,0 +1,120 @@
+/* From Uiverse.io by terenceodonoghue */
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  animation: rotate_3922 1.2s linear infinite;
+  background-color: #0dac0a;
+  background-image: linear-gradient(#0dac0a, #61d860);
+}
+
+.container span {
+  position: absolute;
+  border-radius: 50%;
+  height: 100%;
+  width: 100%;
+  background-color: #0dac0a;
+  background-image: linear-gradient(#0dac0a, #61d860);
+}
+
+.container span:nth-of-type(1) {
+  filter: blur(5px);
+}
+
+.container span:nth-of-type(2) {
+  filter: blur(10px);
+}
+
+.container span:nth-of-type(3) {
+  filter: blur(25px);
+}
+
+.container span:nth-of-type(4) {
+  filter: blur(50px);
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  background-color: #fff;
+  border: solid 5px #ffffff;
+  border-radius: 50%;
+}
+
+/* From Uiverse.io by alexroumi */ 
+.hero-button {
+  padding: 15px 25px;
+  border: unset;
+  border-radius: 15px;
+  color: rgb(11, 173, 10);
+  z-index: 1;
+  background: #ccf3cd;
+  position: relative;
+  font-weight: 1000;
+  font-size: 17px;
+  -webkit-box-shadow: 4px 8px 19px -3px rgb(11, 173, 10);
+  box-shadow: 4px 8px 19px -3px rgb(11, 173, 10);
+  transition: all 250ms;
+  overflow: hidden;
+  cursor: pointer;
+ }
+ 
+ .hero-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  border-radius: 15px;
+  background-color: rgb(11, 173, 10);
+  z-index: -1;
+  -webkit-box-shadow: 4px 8px 19px -3px rgb(11, 173, 10);
+  box-shadow: 4px 8px 19px -3px rgb(11, 173, 10);
+  transition: all 250ms
+ }
+ 
+ .hero-button:hover {
+  color: #e8e8e8;
+ }
+ 
+ .hero-button:hover::before {
+  width: 100%;
+ }
+
+@keyframes rotate_3922 {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.prof-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+}
+
+.prof-image-witout-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+

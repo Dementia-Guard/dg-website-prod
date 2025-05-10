@@ -1,0 +1,60 @@
+/* From Uiverse.io by andrew-demchenk0 */ 
+.down-button {
+  position: relative;
+  width: 80px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 1px solid #0bad0a;
+  background-color: #61d860;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.down-button, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.down-button .button__text {
+  transform: translateX(2px);
+  color: #fff;
+  font-weight: 600;
+}
+
+.down-button .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: #0bad0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.down-button .svg {
+  width: 20px;
+  fill: #fff;
+}
+
+.down-button:hover {
+  background: #0bad0a;
+}
+
+.down-button:hover .button__text {
+  color: transparent;
+}
+
+.down-button:hover .button__icon {
+  width: 80px;
+  transform: translateX(-6px);
+}
+
+.down-button:active .button__icon {
+  background-color: #ccf3cd;
+}
+
+.down-button:active {
+  border: 1px solid #ccf3cd;
+}
